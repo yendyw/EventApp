@@ -244,7 +244,7 @@ ALTER SEQUENCE eventshared_eventsharedid_seq OWNED BY eventshared.eventsharedid;
 CREATE TABLE useraccount (
     useraccountid bigint NOT NULL,
     username character varying(50) NOT NULL,
-    password character varying(50) NOT NULL
+    password character varying(50) NOT NULL,
 );
 
 
@@ -372,7 +372,8 @@ CREATE TABLE userprofile (
     userprofilename character varying(200) NOT NULL,
     email character varying(100) NOT NULL,
     phonenumber character varying(30),
-    picturepath character varying(500),
+	createddatetime timestamp without time zone DEFAULT now(),
+    picturepath character varying(500),	
     picture bytea
 );
 
